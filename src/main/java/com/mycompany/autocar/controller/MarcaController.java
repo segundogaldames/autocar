@@ -5,6 +5,7 @@
 package com.mycompany.autocar.controller;
 
 import com.mycompany.autocar.dao.MarcaDAO;
+import com.mycompany.autocar.dao.ModeloDAO;
 import com.mycompany.autocar.model.Marca;
 import java.util.List;
 
@@ -15,9 +16,11 @@ import java.util.List;
 public class MarcaController 
 {
     private final MarcaDAO marcaDAO;
+    private final ModeloDAO modeloDAO;
 
-    public MarcaController(MarcaDAO marcaDAO) {
+    public MarcaController(MarcaDAO marcaDAO, ModeloDAO modeloDAO) {
         this.marcaDAO = marcaDAO;
+        this.modeloDAO = modeloDAO;
     }
 
     public void guardar(Marca marca) throws Exception {
@@ -29,6 +32,12 @@ public class MarcaController
     }
 
     public void eliminar(int id) throws Exception {
+        int cantidadModelos = modeloDAO.contarPorMarca(id);
+        
+        if (cantidadModelos > 0) {
+            throw new Exception("No se puede eliminar la marca: tiene modelos asociados.");
+        }
+        
         marcaDAO.eliminar(id);
     }
 

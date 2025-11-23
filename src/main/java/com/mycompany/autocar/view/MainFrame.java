@@ -5,8 +5,11 @@
 package com.mycompany.autocar.view;
 
 import com.mycompany.autocar.controller.MarcaController;
+import com.mycompany.autocar.controller.ModeloController;
 import com.mycompany.autocar.dao.mysql.MySQLMarcaDAO;
+import com.mycompany.autocar.dao.mysql.MySQLModeloDAO;
 import com.mycompany.autocar.view.marca.PanelMarca;
+import com.mycompany.autocar.view.modelo.PanelModelo;
 
 import javax.swing.*;
 import java.awt.*;
@@ -32,9 +35,17 @@ public class MainFrame extends JFrame
         tabs = new JTabbedPane();
 
         // ===== PESTAÑA MARCAS ======
-        MarcaController marcaController = new MarcaController(new MySQLMarcaDAO());
+        MySQLMarcaDAO marcaDAO = new MySQLMarcaDAO();
+        MySQLModeloDAO modeloDAO = new MySQLModeloDAO();
+        
+        ModeloController modeloController = new ModeloController(modeloDAO);
+        MarcaController marcaController = new MarcaController(marcaDAO,modeloDAO);
+        
         PanelMarca panelMarca = new PanelMarca(marcaController);
         tabs.addTab("Marcas", panelMarca);
+
+        PanelModelo panelModelo = new PanelModelo(modeloController, marcaController);
+        tabs.addTab("Modelos", panelModelo);
 
         // En el futuro agregamos:
         // tabs.addTab("Modelos", new PanelModelo(...));

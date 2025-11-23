@@ -1,8 +1,13 @@
 /home/segundo/NetBeansProjects/autocar/src/main/java/com/mycompany/autocar/Autocar.java
 /home/segundo/NetBeansProjects/autocar/src/main/java/com/mycompany/autocar/controller/MarcaController.java
+/home/segundo/NetBeansProjects/autocar/src/main/java/com/mycompany/autocar/controller/ModeloController.java
 /home/segundo/NetBeansProjects/autocar/src/main/java/com/mycompany/autocar/dao/MarcaDAO.java
+/home/segundo/NetBeansProjects/autocar/src/main/java/com/mycompany/autocar/dao/ModeloDAO.java
 /home/segundo/NetBeansProjects/autocar/src/main/java/com/mycompany/autocar/dao/mysql/MySQLMarcaDAO.java
+/home/segundo/NetBeansProjects/autocar/src/main/java/com/mycompany/autocar/dao/mysql/MySQLModeloDAO.java
 /home/segundo/NetBeansProjects/autocar/src/main/java/com/mycompany/autocar/db/Conexion.java
 /home/segundo/NetBeansProjects/autocar/src/main/java/com/mycompany/autocar/model/Marca.java
+/home/segundo/NetBeansProjects/autocar/src/main/java/com/mycompany/autocar/model/Modelo.java
 /home/segundo/NetBeansProjects/autocar/src/main/java/com/mycompany/autocar/view/MainFrame.java
 /home/segundo/NetBeansProjects/autocar/src/main/java/com/mycompany/autocar/view/marca/PanelMarca.java
+/home/segundo/NetBeansProjects/autocar/src/main/java/com/mycompany/autocar/view/modelo/PanelModelo.java
